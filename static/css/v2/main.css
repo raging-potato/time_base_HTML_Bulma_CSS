@@ -170,8 +170,9 @@ body {
 }
 
 .main {
-  padding: 48px 32px;
-  background-image: linear-gradient(to bottom, #eaf8ff, #fdfeff);
+  padding: 32px 190px;
+  max-width: 1440px;
+  margin: auto;
 }
 
 table th {
@@ -360,6 +361,8 @@ p.error-msg {
 
 .footer-right-part-container p {
   text-align: end;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .footer__navbar a:hover {
