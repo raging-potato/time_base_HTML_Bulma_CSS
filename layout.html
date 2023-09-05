@@ -11,21 +11,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="./static/js/clock.js"></script>
     <link rel="stylesheet" href="./static/css/v2/bulma.min.css" />
     <link rel="stylesheet" href="./static/css/v2/helpers.css" />
     <link rel="stylesheet" href="./static/css/v2/main.css" />
+    <link rel="stylesheet" href="./static/css/v2/custom.css" />
+    <link rel="stylesheet" href="./static/css/v2/clock.css" />
 </head>
 
 <body>
     <!-- Top Nav -->
     <nav class="navbar has-shadow">
-        <div class="main-container">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                    <img src="./static/images/logo.png" alt="Exactly What Is Time?" />
-                    <strong class="navbar-item is-tagline">
-                        Exactly What Is Time
-                    </strong>
+        <div class="main__container">
+            <div class="navbar-brand logo__container">
+                <a class="is-flex is-justify-content-space-between is-align-items-center gap-1" href="/">
+                    <img src="./static/images/logo.png" class="logo" alt="Exactly What Is Time?" />
+                    <img src="./static/images/wordmark.svg" alt="Exactly What Is Time?" />
                 </a>
                 <a role="button" class="navbar-burger" data-target="nav_menu" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
@@ -124,12 +125,67 @@
     <!-- /. Top Nav -->
 
     <!-- .main -->
-    <section class="main">
-        <div class="main has-background-clock is-flex is-justify-content-space-between is-align-items-center">
-            <div class="is-flex is-justify-content-space-between is-align-items-center gap-3">
-                <img class="logo__location" src="./static/images/uk.svg" alt="England">
-                <p class="hero-body__location has-text-white has-text-size-24">Current Local Time in London, England</p>
+    <section>
+        <div class="main has-background-clock">
+            <div>
+                <p class="has-text-centered has-text-white has-text-weight-bold bold__text">My Cities</p>
             </div>
+            <div class="is-flex is-justify-content-space-between clock__container">
+                <div class="is-flex is-flex-direction-column is-justify-content-center">
+                    <div class="clockContainer">
+                        <div class="hour"></div>
+                        <div class="minute"></div>
+                        <div class="second"></div>
+                    </div>
+                    <div class="is-flex is-justify-content-center gap-1">
+                        <img src="./static/images/italy.svg" alt="">
+                        <span class="has-text-white has-text-weight-bold bold__text">Milan</span>
+                    </div>
+                    <p class="has-text-white has-text-centered"><strong
+                            class="has-text-white has-text-weight-bold bold__text">Tue 19:34</strong>:32</p>
+                </div>
+                <div class="is-flex is-flex-direction-column is-justify-content-center">
+                    <div class="clockContainer">
+                        <div class="hour"></div>
+                        <div class="minute"></div>
+                        <div class="second"></div>
+                    </div>
+                    <div class="is-flex is-justify-content-center gap-1">
+                        <img src="./static/images/portugal.svg" alt="">
+                        <span class="has-text-white has-text-weight-bold bold__text">Lisbon</span>
+                    </div>
+                    <p class="has-text-white has-text-centered"><strong
+                            class="has-text-white has-text-weight-bold bold__text">Tue 19:34</strong>:32</p>
+                </div>
+                <div class="is-flex is-flex-direction-column is-justify-content-center">
+                    <div class="clockContainer">
+                        <div class="hour"></div>
+                        <div class="minute"></div>
+                        <div class="second"></div>
+                    </div>
+                    <div class="is-flex is-justify-content-center gap-1">
+                        <img src="./static/images/spain.svg" alt="">
+                        <span class="has-text-white has-text-weight-bold bold__text">Barcelona</span>
+                    </div>
+                    <p class="has-text-white has-text-centered"><strong
+                            class="has-text-white has-text-weight-bold bold__text">Tue 19:34</strong>:32</p>
+                </div>
+                <div class="is-flex is-flex-direction-column is-justify-content-center">
+                    <div class="clockContainer">
+                        <div class="hour"></div>
+                        <div class="minute"></div>
+                        <div class="second"></div>
+                    </div>
+                    <div class="is-flex is-justify-content-center gap-1">
+                        <img src="./static/images/uk.svg" alt="">
+                        <span class="has-text-white has-text-weight-bold bold__text">London</span>
+                    </div>
+                    <p class="has-text-white has-text-centered"><strong
+                            class="has-text-white has-text-weight-bold bold__text">Tue 19:34</strong>:32</p>
+                </div>
+            </div>
+        </div>
+        <div class="main city__search">
             <div class="field">
                 <p class="control has-icons-left">
                     <input class="input" type="text" placeholder="Search City...">
@@ -138,6 +194,579 @@
                     </span>
                 </p>
             </div>
+        </div>
+        <div class="main overflow-auto">
+            <div class="table__container">
+                <table class="table">
+                    <thead>
+                        <div class="time__thead">
+                            <p><strong class="has-text-white has-text-weight-bold bold__text">Current Local Time Around
+                                    the
+                                    World</strong></p>
+                            <div class="is-flex is-align-items-center">
+                                <div class="is-flex is-align-items-center pr-5">
+                                    <p><strong class="has-text-white has-text-weight-semibold sort__text">Cities
+                                            Shown</strong></p>
+                                    <div class="navbar-item has-dropdown is-hoverable mobile-dropdown">
+                                        <a class="navbar-link has-text-weight-medium sort__dropdown__text">Most
+                                            Popular</a>
+                                        <div class="navbar-dropdown is-hidden-touch">
+                                            <a class="navbar-item" href="/measurement-of-time/">Latest</a>
+                                            <a class="navbar-item" href="/measurement-of-time/calendars/">Oldest</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="is-flex is-align-items-center">
+                                    <p><strong class="has-text-white has-text-weight-semibold sort__text">Sort
+                                            By</strong>
+                                    </p>
+                                    <div class="navbar-item has-dropdown is-hoverable mobile-dropdown">
+                                        <a class="navbar-link has-text-weight-medium sort__dropdown__text">City</a>
+                                        <div class="navbar-dropdown is-hidden-touch">
+                                            <a class="navbar-item" href="/measurement-of-time/">Milan</a>
+                                            <a class="navbar-item" href="/measurement-of-time/calendars/">Lisbon</a>
+                                            <a class="navbar-item" href="/measurement-of-time/clocks/">Barcelona</a>
+                                            <a class="navbar-item"
+                                                href="/measurement-of-time/periodization/">London</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="is-flex is-justify-content-space-around">
+                                    <span class="has-text-link">City Name</span> <span>Tue 13:19</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </section>
     <!-- /.main -->
@@ -163,6 +792,9 @@
                 </div>
                 <div class="column right">
                     <div class="footer-right-part-container">
+                        <p>Information from your device can be used to personalize your ad experience.</p>
+                        <p class="text__underline">Do not sell or share my personal Information</p>
+                        <p>A RAPTIVE PARTNER SITE</p>
                     </div>
                 </div>
             </div>
