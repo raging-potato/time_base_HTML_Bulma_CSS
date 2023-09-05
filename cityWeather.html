@@ -141,6 +141,163 @@
                 </p>
             </div>
         </div>
+        <div class="main">
+            <div class="tabs">
+                <ul>
+                    <li class="is-active"><a>Time General</a></li>
+                    <li><a>Weather</a></li>
+                    <li><a>Timezone</a></li>
+                    <li><a>DST Changes</a></li>
+                    <li><a>Sun & Moon</a></li>
+                </ul>
+            </div>
+            <div class="map__container">
+                <div class="map__detail">
+                    <div class="map__clock">
+                        <div class="clockContainer">
+                            <div class="hour"></div>
+                            <div class="minute"></div>
+                            <div class="second"></div>
+                        </div>
+                        <p class="bold__text has-text-weight-bold has-text-neutral">12:12:04</p>
+                        <p class="normal__text">Tuesday, 29 August 2023</p>
+                    </div>
+                    <div class="map__detail__detail">
+                        <p class="normal__text"><span>Country</span><span class="has-text-blue-main">United
+                                States</span></p>
+                        <p class="normal__text"><span>Country</span><span class="has-text-blue-main">New York
+                                (NY)</span></p>
+                        <p class="normal__text"><span>Country</span><span class="has-text-blue-main">40°43'N /
+                                74°01'W</span></p>
+                        <p class="normal__text"><span>Country</span><span class="has-text-blue-main">8 m</span></p>
+                        <p class="normal__text"><span>Country</span><span class="has-text-blue-main">United States
+                                Dollar (USD)</span></p>
+                        <p class="normal__text"><span>Country</span><span class="has-text-blue-main">English</span></p>
+                        <p class="normal__text"><span>Country</span><span class="has-text-blue-main">+1</span></p>
+                    </div>
+                </div>
+                <div class="map__map"><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19867.496123624045!2d-0.12622978538273052!3d51.50519798868094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760350baa0a1bb%3A0xd5ad768cf235c18a!2sLondon%20Bridge%20Hotel!5e0!3m2!1sen!2sus!4v1693766470016!5m2!1sen!2sus"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+            <div class="weather__container">
+                <div class="weather__card__container">
+                    <p class=".has-text-neutral card__heading">Weather</p>
+                    <div class="weather__card">
+                        <div class="is-flex is-justify-content-space-between">
+                            <div>
+                                <p class="card__title has-text-white">London</p>
+                                <p class="card__subtitle has-text-white">Soutschire</p>
+                            </div>
+                            <p class="card__degValue has-text-white">21&deg;</p>
+                        </div>
+                        <div class="is-flex is-justify-content-space-between">
+                            <p class="card__subtitle has-text-white">Partly Cloudy</p>
+                            <p class="card__subtitle has-text-white"><span>H:29&deg;</span><span
+                                    class="pl-2">L:15&deg;</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hour__forecast__container navbar-end m-0">
+                    <div class="is-flex is-flex-direction-column is-align-items-center navbar-end">
+                        <p class="forecast__time">Now</p>
+                        <img src="./static/images/partly-night.svg" alt="cloud">
+                        <p class="forecast__deg">21&deg;</p>
+                    </div>
+                    <div class="is-flex is-flex-direction-column is-align-items-center navbar-end">
+                        <p class="forecast__time">10PM</p>
+                        <img src="./static/images/partly-night.svg" alt="cloud">
+                        <p class="forecast__deg">21&deg;</p>
+                    </div>
+                    <div class="is-flex is-flex-direction-column is-align-items-center navbar-end">
+                        <p class="forecast__time">11PM</p>
+                        <img src="./static/images/partly-night.svg" alt="cloud">
+                        <p class="forecast__deg">19&deg;</p>
+                    </div>
+                    <div class="is-flex is-flex-direction-column is-align-items-center navbar-end">
+                        <p class="forecast__time">12AM</p>
+                        <img src="./static/images/partly-night.svg" alt="cloud">
+                        <p class="forecast__deg">19&deg;</p>
+                    </div>
+                    <div class="is-flex is-flex-direction-column is-align-items-center navbar-end">
+                        <p class="forecast__time">1AM</p>
+                        <img src="./static/images/partly-night.svg" alt="cloud">
+                        <p class="forecast__deg">19&deg;</p>
+                    </div>
+                </div>
+                <div class="timezone__container">
+                    <p>Timezone</p>
+                    <div class="is-flex is-justify-content-space-between timezone__clocks__container">
+                        <div>
+                            <div class="clockContainer">
+                                <div class="hour"></div>
+                                <div class="minute"></div>
+                                <div class="second"></div>
+                            </div>
+                            <p class="card__heading">EST</p>
+                        </div>
+                        <div>
+                            <div class="clockContainer">
+                                <div class="hour"></div>
+                                <div class="minute"></div>
+                                <div class="second"></div>
+                            </div>
+                            <p class="card__heading">ADT</p>
+                        </div>
+                        <div>
+                            <div class="clockContainer">
+                                <div class="hour"></div>
+                                <div class="minute"></div>
+                                <div class="second"></div>
+                            </div>
+                            <p class="card__heading">DST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast__container">
+                <div class="forecast__detail__container is-justify-content-space-between">
+                    <div class="bg__temp__meter">
+                        <p class="card__heading is-flex"><span><img src="./static/images/temp-meter.svg"
+                                    alt="temp meter" class="mt-1"></span>TEMPERATURE</p>
+                        <img src="./static/images/temperature-location.svg" alt="Temperature Location"
+                            class="temperature__location__img">
+                        <p class="card__heading">See More</p>
+                    </div>
+                    <div class="forecast__detail__card">
+                        <p class="detail__card__heading is-flex is-align-items-center"><span class="mt-1 mr-1"><img
+                                    src="./static/images/sun.svg" alt=""></span>UV INDEX</p>
+                        <p class="detail__value">0</p>
+                        <p class="detail__value is-size-3">Low</p>
+                        <img src="./static/images/slider.svg" alt="Slider" class="is-fullwidth">
+                        <p class="detail__detail">Low for the rest of the day.</p>
+                    </div>
+                    <div class="forecast__detail__card">
+                        <p class="detail__card__heading is-flex is-align-items-center"><span class="mt-1 mr-1"><img
+                                    src="./static/images/sun-rise.svg" alt=""></span>SUNRISE</p>
+                        <p class="detail__value">6.28<span class="is-size-3">AM</span></p>
+                        <img src="./static/images/graph.svg" alt="Slider" class="is-fullwidth">
+                        <p class="detail__detail">Sunset: 6:10 <span class="is-size-6">PM</span></p>
+                    </div>
+                    <div class="forecast__detail__card is-align-items-center">
+                        <p class="detail__card__heading is-flex is-align-items-center"><span class="mt-1 mr-1"><img
+                                    src="./static/images/wind.svg" alt=""></span>WIND</p>
+                        <div class="is-flex is-justify-content-center is-align-items-center wind__meter__container">
+                            <img src="./static/images/compass.svg" alt="Slider" class="wind__meter">
+                        </div>
+                    </div>
+                    <div class="forecast__detail__card">
+                        <p class="detail__card__heading is-flex is-align-items-center"><span class="mt-1 mr-1"><img
+                                    src="./static/images/rain-drop.svg" alt=""></span>RAINFALL</p>
+                        <p class="detail__value">0<span class="is-size-3">mm</span></p>
+                        <p class="detail__detail is-size-3">in last 24h</p>
+                        <p class="detail__detail">4 mm expected in next 24h.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
     <!-- /.main -->
 
