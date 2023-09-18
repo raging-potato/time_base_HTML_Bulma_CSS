@@ -1,4 +1,4 @@
-#Update UI with Bulma CSS framework
+# Update UI with Bulma CSS framework
 
 This is for updating UI of exactlywhatistime.com website with new Figma design.
 
